@@ -4,7 +4,7 @@ import torch
 from ultralytics import YOLO  # Pastikan ultralytics sudah terinstal
 
 # Pastikan file model tersedia di lokasi yang benar
-MODEL_PATH = "D:\COOLYEAH\Asistensi/best.pt"
+MODEL_PATH = "best.pt"
 
 # Memuat model dengan YOLO jika berasal dari Ultralytics
 try:
@@ -15,7 +15,7 @@ except Exception as e:
     exit()
 
 # Fungsi utama
-def detect_canny_edges_with_model(low_threshold=50, high_threshold=150):
+def detect_canny_edges_with_model(low_threshold=100, high_threshold=100):
     cap = cv2.VideoCapture(0)  # Gunakan kamera default
     
     if not cap.isOpened():
